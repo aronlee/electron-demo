@@ -1,0 +1,113 @@
+$mainColor: rgb(198, 47, 47);
+$white: #ffffff;
+
+.header {
+  height: 50px;
+  background-color: $mainColor;
+}
+
+.logo {
+  width: 128px;
+  box-sizing: border-box;
+  padding-top: 12px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+  .title {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.forward-return {
+  width: 51px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 44px;
+  padding-top: 14px;
+
+  .control {
+    width: 24px;
+    height: 20px;
+    color: #ffffff;
+    border-width: 1px;
+    border-color: $mainColor * .85;
+    border-style: solid;
+    cursor: pointer;
+    text-align: center;
+    &[disabled] {
+      cursor: auto;
+      color: #ffffff * .85;
+    }
+    &.return {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &.forward {
+      border-radius: 0 4px 4px 0;
+      margin-left: -1px;
+    }
+
+  }
+
+  .iconfont {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+.header-input-wrap {
+  position: relative;
+  margin-left: 10px;
+  margin-top: 14px;
+  width: 216px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, .16);
+  .ipt {
+    margin-left: 12px;
+    border: none;
+    background: transparent;
+    outline: none;
+    height: 20px;
+    width: 160px;
+    box-sizing: border-box;
+    color: $white;
+    font-size: 12px;
+    &::-webkit-input-placeholder { /* WebKit browsers */
+      color: $white * .8;
+      opacity: .5;
+    } 
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+      color: $white * .8;
+      opacity: .5;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: $white * .8;
+      opacity: .5;
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+      color: $white * .8;
+      opacity: .5;
+    }
+  }
+  .icon-search {
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    color: $white * .8;
+    opacity: .5;
+    cursor: pointer;
+    &:hover {
+      color: $white;
+      opacity: .8;
+    }
+  }
+}

@@ -1,11 +1,7 @@
 import { app, BrowserWindow } from 'electron'
 import path from 'path'
 import url from 'url'
-// import icon from './img/music-logo.svg'
 
-// console.log(icon)
-
-console.log(path.join(__dirname, './img/music-logo.png'))
 const title = '我的云音乐';
 
 // 保持一个对于 window 对象的全局引用，如果你不这样做，
@@ -23,18 +19,22 @@ function createWindow () {
 		// transparent: true,
 		resizable: false,
 		fullscreen: false,
-		title: title,
+    title: title,
+    movable: true,
 		icon: path.join(__dirname, './img/music-logo.png'),
 		titleBarStyle: 'hidden-inset',
 		// backgroundColor: 'transparent'
 	})
 
   // 然后加载应用的 index.html。
-  win.loadURL(url.format({
-    pathname: path.join(__dirname, '../src/index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  // win.loadURL(url.format({
+  //   pathname: path.join(__dirname, '../src/index.html'),
+  //   protocol: 'file:',
+  //   slashes: true
+  // }))
+
+  win.loadURL('http://localhost:3000/')
+  // win.loadURL('https://www.baidu.com/')
 
   // 打开开发者工具。
   win.webContents.openDevTools()
